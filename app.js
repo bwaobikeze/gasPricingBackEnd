@@ -1,13 +1,19 @@
-class fuelQuoteModule {
-  //Takes the city input from the user and in theory return the current lowest PPG(price per gallon) returns PPG
-  UCLocationOC() {}
-
-  //add a quote to the users account(enter object and store in a Linked List the new quote)
-  UCClienQuoteManagement() {}
-
-  //displays quotes in a tabular display(this should return data in a format that the front end team can display anyway they like.
-  UCClientHistory() {}
-
-  //what profit margin we want calculate the quote for the user
-  UCPricingMargin() {}
-}
+//var fuelQuoteModule = require("./fuelQuoteModules");
+//testing out with test user objects
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+ListOfUsers = [
+  { name: "bob", Age: 19, Adress: "8352 Redwood St Plano TX 75074" },
+  { name: "Brian", Age: 19, Adress: "11 Illinois Dr Fort Worth TX 76116" },
+];
+console.log(ListOfUsers);
+readline.question("Pick 0 or 1 test user: ", (UserChoice) => {
+  if (UserChoice == 0) {
+    console.log(ListOfUsers[UserChoice]);
+  } else {
+    console.log(ListOfUsers[UserChoice]);
+  }
+  readline.close();
+});
