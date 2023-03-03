@@ -1,3 +1,5 @@
+//Quotes object " we may need it for making the Quote history"
+
 class quotes {
   gallon;
   date;

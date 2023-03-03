@@ -3,17 +3,7 @@ var quote = require("./quotes");
 class fuelQuoteModule {
   differntquotes = { Houston: 2.99, Auston: 6.99, "san antonio": 1.99 };
   //Takes the city input from the user and in theory return the current lowest PPG(price per gallon) returns PPG
-  UCLocationOC(gallons, city) {
-    if (city == Object.keys(differntquotes)) {
-      var newQuote = new quote();
-      newQuote.gallon = gallons;
-      newQuote.UsersDelveryAddress;
-      newQuote.currentDate();
-      newQuote.DelivaryDay();
-      newQuote.getSugggestedPrice(Object.values(differntquotes));
-      newQuote.grandTotal(Object.values(differntquotes));
-    }
-  }
+  UCLocationOC(gallons, city) {}
 
   //add a quote to the users account(enter object and store in a Linked List the new quote)
   UCClienQuoteManagement() {}
