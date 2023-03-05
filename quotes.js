@@ -7,20 +7,32 @@ class quotes {
   DelivaryDate;
   sugestedPrice;
   TotalAmount;
-  currentDate() {
-    this.date = new Date().toLocaleDateString;
+  GetcurrentDate() {
+    return new Date().toLocaleDateString;
   }
-  GetAdress(UserAddress) {
+  SetAdress(UserAddress) {
     this.UsersDelveryAddress = UserAddress;
   }
-  DelivaryDay() {
-    DelivaryDate = new Date().toLocaleDateString;
+  GetAdress() {
+    return this.UsersDelveryAddress;
   }
-  getSugggestedPrice(price) {
+  GetDelivaryDay() {
+    this.DelivaryDate = this.GetcurrentDate();
+  }
+  SetSugggestedPrice(price) {
     this.sugestedPrice = price;
   }
-  grandTotal(val) {
-    TotalAmount = this.gallon * this.sugestedPrice;
+  GetSugggestedPrice() {
+    return this.sugestedPrice;
   }
+  SetGallon(Gallon) {
+    this.gallon = Gallon;
+  }
+  //   SetTotal(val) {
+  //     TotalAmount = this.gallon * this.sugestedPrice;
+  //   }
+  //   GetTotal() {
+  //     return this.TotalAmount;
+  //   }
 }
 module.exports = quotes;

@@ -1,4 +1,4 @@
-//var fuelQuoteModule = require("./fuelQuoteModules");
+const fuelQuoteModule = require("./fuelQuoteModule.js");
 
 const { Console } = require("console");
 
@@ -26,20 +26,11 @@ ListOfUsers = [
     Zipcode: "76116",
   },
 ];
-const readline = require("readline").createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-//simulating logging in
-readline.question("Please Provide Email: ", (userEmail) => {
-  let returnedUser;
-  for (let i = 0; i < ListOfUsers.length; i++) {
-    if (userEmail == ListOfUsers[i].email) {
-      returnedUser = ListOfUsers[i];
-      break;
-    }
-  }
-  console.log(returnedUser);
-
-  readline.close();
-});
+var fulQ = new fuelQuoteModule();
+let firstQuote = fulQ.UCLocationOC("Houston", 5);
+console.log(firstQuote);
+fulQ.UCClienQuoteManagement(firstQuote, "roesch@gmail.com", ListOfUsers);
+console.log(ListOfUsers[1].UserHistory);
+firstQuote = fulQ.UCLocationOC("SanAntonio", 5);
+fulQ.UCClienQuoteManagement(firstQuote, "roesch@gmail.com", ListOfUsers);
+//fulQ.UCClientHistory("roesch@gmail.com", ListOfUsers);
