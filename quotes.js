@@ -7,8 +7,11 @@ class quotes {
   DelivaryDate;
   sugestedPrice;
   TotalAmount;
+  SetcurrentDate() {
+    //this.date=Date().;
+  }
   GetcurrentDate() {
-    return new Date().toLocaleDateString;
+    return this.date;
   }
   SetAdress(UserAddress) {
     this.UsersDelveryAddress = UserAddress;

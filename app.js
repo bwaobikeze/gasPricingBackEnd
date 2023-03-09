@@ -24,13 +24,13 @@ ListOfUsers = [
     City: "Fort Worth",
     State: "TX",
     Zipcode: "76116",
+    UserHistory: [],
   },
 ];
+//driver code for testing class
 var fulQ = new fuelQuoteModule();
 let firstQuote = fulQ.UCLocationOC("Houston", 5);
-console.log(firstQuote);
 fulQ.UCClienQuoteManagement(firstQuote, "roesch@gmail.com", ListOfUsers);
-console.log(ListOfUsers[1].UserHistory);
 firstQuote = fulQ.UCLocationOC("SanAntonio", 5);
 fulQ.UCClienQuoteManagement(firstQuote, "roesch@gmail.com", ListOfUsers);
-//fulQ.UCClientHistory("roesch@gmail.com", ListOfUsers);
+console.log(ListOfUsers[1].UserHistory);
