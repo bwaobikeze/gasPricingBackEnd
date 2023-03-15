@@ -53,6 +53,11 @@ class fuelQuoteModule {
   the users quote history and print them to the console(This can be a good way to get each property of the quote class and display 
   each of them with each quote) 
    */
+  /**
+   * 
+   * @param {*} userEmail 
+   * @param {*} UserDBLIst 
+   */
   UCClientHistory(userEmail, UserDBLIst) {
     var UserDBLIst = [];
     var returnedUser;
@@ -68,6 +73,11 @@ class fuelQuoteModule {
   }
 
   //what profit margin we want calculate the quote for the user
-  UCPricingMargin() {}
+  UCPricingTotal(userQuote) {
+    const x = 0.1;
+    let y = 1 - x;
+    userQuote.totalQuote = (userQuote.gallon * userQuote.sugestedPrice) / y;
+    return userQuote.totalQuote;
+  }
 }
 module.exports = fuelQuoteModule;

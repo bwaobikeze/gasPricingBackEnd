@@ -6,7 +6,7 @@ class quotes {
   UsersDelveryAddress;
   DelivaryDate;
   sugestedPrice;
-  TotalAmount;
+  totalQuote;
   SetcurrentDate() {
     //this.date=Date().;
   }
@@ -31,11 +31,5 @@ class quotes {
   SetGallon(Gallon) {
     this.gallon = Gallon;
   }
-  //   SetTotal(val) {
-  //     TotalAmount = this.gallon * this.sugestedPrice;
-  //   }
-  //   GetTotal() {
-  //     return this.TotalAmount;
-  //   }
 }
 module.exports = quotes;

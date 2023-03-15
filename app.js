@@ -30,7 +30,8 @@ ListOfUsers = [
 //driver code for testing class
 var fulQ = new fuelQuoteModule();
 let firstQuote = fulQ.UCLocationOC("Houston", 5);
-fulQ.UCClienQuoteManagement(firstQuote, "roesch@gmail.com", ListOfUsers);
-firstQuote = fulQ.UCLocationOC("SanAntonio", 5);
-fulQ.UCClienQuoteManagement(firstQuote, "roesch@gmail.com", ListOfUsers);
-console.log(ListOfUsers[1].UserHistory);
+console.log(fulQ.UCPricingTotal(firstQuote));
+// fulQ.UCClienQuoteManagement(firstQuote, "roesch@gmail.com", ListOfUsers);
+// firstQuote = fulQ.UCLocationOC("SanAntonio", 5);
+// fulQ.UCClienQuoteManagement(firstQuote, "roesch@gmail.com", ListOfUsers);
+// console.log(ListOfUsers[1].UserHistory);

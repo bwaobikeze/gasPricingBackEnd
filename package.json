@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/bwaobikeze/gasPricingBackEnd/issues"
   },
-  "homepage": "https://github.com/bwaobikeze/gasPricingBackEnd#readme"
+  "homepage": "https://github.com/bwaobikeze/gasPricingBackEnd#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
 }
