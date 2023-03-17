@@ -23,15 +23,16 @@
   </style>
   <h1>Fuel Quote Form</h1>
   <body style="background-color:beige;">
+    <form action="/" method="post">
   <div class="login">
   <strong><label for="gallonsrequested"<b>Gallons Requested: <font color="red">Required</font> </b></label></strong><br> 
-  <input type="number" placeholder="Enter Gallons Requested" name="gallons" id="userinfo" maxlength="50" required > 
+  <input type="number" placeholder="Enter Gallons Requested" name="gallons"value="<%= locals.gallons %>" id="userinfo" maxlength="50" required > 
   <br><br>
   <strong><label for="deliveryaddress"<b>Delivery Address: </b></label></strong><br>
   <input type="text" name="add1" id="userinfo" maxlength="100" disabled required>
   <br><br>
   <strong><label for="deliverydate"<b>Delivery Date: </b></label></strong><br>
-  <input type="date">
+  <input type="date" value="<%= locals.date%>">
   <br><br>
   <strong><label for="suggestprice"<b>Suggested Price: <font color="red"></font></b></label></strong><br>
   <input type="number" name="suggestprice" id="userinfo" maxlength="100" disabled required>
@@ -39,8 +40,9 @@
   <strong><label for="totaldue"<b>Total Amount Due: </b></label></strong><br>
   <input type="number" name="totaldue" id="userinfo" maxlength="100" disabled required>
   <br><br>
-  <input type="button" value="OK" name="OK" id="OK">
+  <button type="Submit">OK</button>
   <br><br>
   </div>
+</form>
   </body>
 </html>

@@ -1,37 +1,19 @@
 const fuelQuoteModule = require("./fuelQuoteModule.js");
+//const bodyParser = require("body-parser");
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
+app.set("view engine", "ejs");
+app.use(bodyParser.urlencoded({extended: true}))
 
-const { Console } = require("console");
+app.get("/", (req, res) => {
+  res.render("quoteform");
 
-//testing out with test user objects
-ListOfUsers = [
-  {
-    email: "notaprguy@msn.com",
-    Fullname: "Bob Igar",
-    Age: 19,
-    Adress1: "8352 Redwood St",
-    Adress2: "",
-    City: "Plano",
-    State: "TX",
-    Zipcode: "75074",
-    UserHistory: [],
-  },
-  {
-    email: "roesch@gmail.com",
-    name: "Rose Wild",
-    Age: 19,
-    Adress1: "11 Illinois Dr",
-    Adress2: "",
-    City: "Fort Worth",
-    State: "TX",
-    Zipcode: "76116",
-    UserHistory: [],
-  },
-];
-//driver code for testing class
-var fulQ = new fuelQuoteModule();
-let firstQuote = fulQ.UCLocationOC("Houston", 5);
-console.log(fulQ.UCPricingTotal(firstQuote));
-// fulQ.UCClienQuoteManagement(firstQuote, "roesch@gmail.com", ListOfUsers);
-// firstQuote = fulQ.UCLocationOC("SanAntonio", 5);
-// fulQ.UCClienQuoteManagement(firstQuote, "roesch@gmail.com", ListOfUsers);
-// console.log(ListOfUsers[1].UserHistory);
+})
+app.post("/app.js", (req, res) => {
+  let gallonVal = req.body.gallons;
+  console.log(gallonVal);
+})
+app.listen(5500);
+
+
