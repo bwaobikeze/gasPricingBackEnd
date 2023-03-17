@@ -7,20 +7,17 @@ class quotes {
   DelivaryDate;
   sugestedPrice;
   totalQuote;
-  SetcurrentDate() {
-    //this.date=Date().;
-  }
-  GetcurrentDate() {
-    return this.date;
-  }
   SetAdress(UserAddress) {
     this.UsersDelveryAddress = UserAddress;
   }
   GetAdress() {
     return this.UsersDelveryAddress;
   }
+  setDelivaryDate(deliveryday) {
+    this.DelivaryDate = deliveryday;
+  }
   GetDelivaryDay() {
-    this.DelivaryDate = this.GetcurrentDate();
+    return this.DelivaryDate
   }
   SetSugggestedPrice(price) {
     this.sugestedPrice = price;
