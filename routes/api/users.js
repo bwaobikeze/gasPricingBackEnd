@@ -1,5 +1,6 @@
 const { json } = require("body-parser");
 const express = require("express");
+const fuelQuoteModule = require("../../fuelQuoteModule.js");
 
 const router = express.Router();
 
@@ -13,42 +14,51 @@ router.get("/", (req, res) => {
   res.send(res.json(User));
 
 });
+router.route("/:id").get((req, res) => {
 
-router.get("/:id",(req, res)=> {
-    res.status(400).json(User);
-})
 
- 
+    const found = User.some(User => User.id === parseInt(req.params.id));
 
-// router.get("/:id", (req, res) => {
-//     //res.send(res.json(users));
+    if (found) {
 
-// //   const found = users.some(user => user.id === parseInt(req.params.id));
+        //res.json(User.filter(User => User.id === parseInt(req.params.id)));
+            User.forEach(user => {
 
- 
+      if (user.id === parseInt(req.params.id)) {
+        res.render("quoteform");
+        
+      }
 
-// //   if (found) {
+    });
+        
 
-// //     res.json(users.filter(user => user.id === parseInt(req.params.id)));
+    } else {
 
-// //   } else {
+        res.sendStatus(400);
 
-// //     res.sendStatus(400);
+    }
 
-// //   }
-
-// });
-// router.post("/:id", (req, res) => {
-//     console.log(res.json(users));
-// })
-
+}).post((req, res) => {
+    let gallonVal = req.body.gallons;
+    let getDate = req.body.Date = new Date();
+    
+    let cityChossin = req.body.city;
+     let newActioin = new fuelQuoteModule();
+    let testQuote = newActioin.UCLocationOC(cityChossin, gallonVal, req.body.Date)
+    newActioin.UCPricingTotal(testQuote);
+  
+    // console.log(gallonVal);
+    // console.log(getDate);
+    // console.log(cityChossin);
+    console.log(testQuote);
+  })
 
 
 //Update User
 
 // router.put("/:id", (req, res) => {
 
-//   const found = users.some(user => user.id === parseInt(req.params.id));
+//   const found = Users.some(User => User.id === parseInt(req.params.id));
 
 //   if (found) {
 
@@ -56,11 +66,11 @@ router.get("/:id",(req, res)=> {
 
 //     users.forEach(user => {
 
-//       if (user.id === parseInt(req.params.id)) {
+//       if (User.id === parseInt(req.params.id)) {
 
-//         user.Fullname = updateUser.Fullname ? updateUser.Fullname : user.Fullname;
+//         User.Fullname = updateUser.Fullname ? updateUser.Fullname : user.Fullname;
 
-//         user.email = updateUser.email ? updateUser.email : user.email;
+//         User.email = updateUser.email ? updateUser.email : user.email;
 
 //         res.json({ msg: "User updated", user });
 
