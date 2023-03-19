@@ -4,7 +4,7 @@ const fuelQuoteModule = require("../../fuelQuoteModule.js");
 
 const router = express.Router();
 
-const uuid = require("uuid");
+//const uuid = require("uuid");
 
 let User = require("../../user");
 
@@ -25,8 +25,7 @@ router.route("/:id").get((req, res) => {
             User.forEach(user => {
 
       if (user.id === parseInt(req.params.id)) {
-        res.render("quoteform");
-        
+        res.render("quoteform",{add1:user.Adress1});
       }
 
     });
@@ -38,21 +37,22 @@ router.route("/:id").get((req, res) => {
 
     }
 
-}).post((req, res) => {
+})
+    .post((req, res) => {
+    console.log(req.params.id);
     let gallonVal = req.body.gallons;
     let getDate = req.body.Date = new Date();
-    
     let cityChossin = req.body.city;
+    let userAdress = req.body.address;
      let newActioin = new fuelQuoteModule();
-    let testQuote = newActioin.UCLocationOC(cityChossin, gallonVal, req.body.Date)
+    let testQuote = newActioin.UCLocationOC(cityChossin, gallonVal, getDate,userAdress)
     newActioin.UCPricingTotal(testQuote);
-  
-    // console.log(gallonVal);
-    // console.log(getDate);
-    // console.log(cityChossin);
+    res.render("quoteform",{"add1":testQuote.UsersDelveryAddress,"totaldue":testQuote.totalQuote,"suggestprice":testQuote.sugestedPrice});
     console.log(testQuote);
   })
-
+// router.param("id", (req, res, next, id) => {
+//     req.user = User[id];
+// })
 
 //Update User
 

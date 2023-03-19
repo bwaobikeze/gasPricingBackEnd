@@ -16,13 +16,15 @@ class fuelQuoteModule {
   and set the gallon requested to the gallon property and set the price to the SetSugggestedPrice property
   then return the quote object to use on the functions.
    */
-  UCLocationOC(CityDropDown, GallonsRequested,deliverDate) {
+  UCLocationOC(CityDropDown, GallonsRequested,deliverDate,adresPassed) {
     for (let i = 0; i < this.UCCityPricesPerGallon.length; i++) {
       if (CityDropDown == this.UCCityPricesPerGallon[i].city) {
         var tempQ = new quotes();
         tempQ.SetGallon(GallonsRequested);
+        tempQ.getCurrentDate();
         tempQ.SetSugggestedPrice(this.UCCityPricesPerGallon[i].price);
         tempQ.setDelivaryDate(deliverDate);
+        tempQ.SetAdress(adresPassed);
         return tempQ;
       }
     }

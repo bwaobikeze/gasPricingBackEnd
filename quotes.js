@@ -10,6 +10,9 @@ class quotes {
   SetAdress(UserAddress) {
     this.UsersDelveryAddress = UserAddress;
   }
+  getCurrentDate() {
+    this.date = new Date();
+  }
   GetAdress() {
     return this.UsersDelveryAddress;
   }
