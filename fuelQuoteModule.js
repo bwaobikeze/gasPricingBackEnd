@@ -37,10 +37,10 @@ class fuelQuoteModule {
   and searches through the user database list and then once we find the user email that we also 
   passed in we retrieve that users quote history list and push/add the latest quote object into the users UserHistory list  breaks out of the loop 
    */
-  UCClienQuoteManagement(UCQuote, userEmail, UserDBLIst) {
+  UCClienQuoteManagement(UCQuote, userID, UserDBLIst) {
     var UserDBLIst;
     for (let i = 0; i < UserDBLIst.length; i++) {
-      if (userEmail == UserDBLIst[i].email) {
+      if (userID == UserDBLIst[i].id) {
         ListOfUsers[i].UserHistory.push(UCQuote);
         break;
       }

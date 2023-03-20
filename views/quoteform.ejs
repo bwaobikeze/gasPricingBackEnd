@@ -23,7 +23,7 @@
   </style>
   <h1>Fuel Quote Form</h1>
   <body style="background-color:beige;">
-    <form action="/api/users/:id" method="post">
+    <form method="post">
   <div class="login">
   <strong><label for="gallonsrequested"<b>Gallons Requested: <font color="red">Required</font> </b></label></strong><br> 
   <input type="number" placeholder="Enter Gallons Requested" name="gallons"value="<%= locals.gallons %>" id="userinfo" maxlength="50" required > 
@@ -1322,11 +1322,13 @@
   <strong><label for="totaldue"<b>Total Amount Due: </b></label></strong><br>
   <input type="number" name="totaldue" value="<%=locals.totaldue%>" id="userinfo" maxlength="100" disabled required>
   <br><br>
-  <button type="OK">OK</button>
-  <br><br>
-  <button type="OK">Check User History</button>
-  <br><br>
+  <button type="submit">OK</button>
   </div>
 </form>
+<div>
+<br><br>
+<button onclick="location.href='/api/UserHist'">Check User History</button>
+<br><br>
+</div>
   </body>
 </html>
