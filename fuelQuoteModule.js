@@ -5,7 +5,7 @@ class fuelQuoteModule {
   //3 City Price Per Gallon
   UCCityPricesPerGallon = [
     { city: "Houston", price: 2.99 },
-    { city: "Auston", price: 6.99 },
+    { city: "Austin", price: 6.99 },
     { city: "SanAntonio", price: 1.99 },
   ];
   //Takes the city input from the user and in theory return the current lowest PPG(price per gallon) returns PPG

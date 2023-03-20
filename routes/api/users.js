@@ -3,9 +3,6 @@ const express = require("express");
 const fuelQuoteModule = require("../../fuelQuoteModule.js");
 
 const router = express.Router();
-
-//const uuid = require("uuid");
-
 let User = require("../../user");
 
  
@@ -55,8 +52,6 @@ router.route("/:id")
                     let testQuote = newActioin.UCLocationOC(cityChossin, gallonVal, getDate, userAdress)
                     newActioin.UCPricingTotal(testQuote);
                     res.render("quoteform", { "add1": testQuote.UsersDelveryAddress, "totaldue": testQuote.totalQuote, "suggestprice": testQuote.sugestedPrice });
-                    req.body = testQuote;
-                    console.log(testQuote);
                     newActioin.UCClienQuoteManagement(testQuote, req.params.id, User);
                     console.log(User[0]);
                 }
