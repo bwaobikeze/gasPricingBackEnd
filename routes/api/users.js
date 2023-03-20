@@ -71,9 +71,12 @@ router.route("/:id")
         }
 
 
-//Update Use
+//Update UserHistory
    });
-
+   router.get("/:id/quotehist", (req, res) => {
+    res.render("quotehist")
+  
+  });
  
 
 module.exports = router
