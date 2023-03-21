@@ -45,7 +45,8 @@ router.route("/:id")
 
                 if (user.id === parseInt(req.params.id)) {
                     let gallonVal = req.body.gallons;
-                    let getDate = req.body.Date = new Date();
+                    console.log(req.body);
+                    let getDate = new Date(req.body.date);
                     let cityChossin = req.body.city;
                     let userAdress = user.Adress1;
                     let newActioin = new fuelQuoteModule();
